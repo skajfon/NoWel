@@ -1,0 +1,72 @@
+<div style="text-align: center ;"><p style="font-size: large;">welcom to red dragon.I hope you will enjoy our content. </p></div>
+
+
+<div class="container">
+    <div class="row">
+        <h1>Top books</h1>
+    </div>
+    <div class="row" style="justify-content: space-around;">
+
+
+        <div class="card bg-dark text-white col" style="width: 10rem; margin: 1px; padding: 1px; flex: none; ">
+            <h4>No.1</h4>
+            <img [src]="books[0].picture" style="width: auto ;" class="card-img-top" alt="...">
+            <div class="card-body p-1 m-1" >
+                <h5 class="card-title ">{{books[0].name}}</h5>
+                <div class="flex-end" style="justify-content: center;">
+                    <p style="display: inline ;" class="card-text">rating: </p>
+                    <span style="display: inline;" class="badge bg-primary rounded-pill">{{books[0].rating}}</span>
+                </div>
+                
+            </div>
+            <ul class="list-group list-group-flush bg-dark text-white" style="border-color: darkgrey;">
+                <li class="list-group-item bg-dark text-white p-1 m-1">chapters: {{books[0].chapters}} </li>
+                <li class="list-group-item bg-dark text-white p-1 m-1">reders: {{books[0].follover}}</li>
+            </ul>
+            <div class="card-body p-1 m-1 position-relative text-center">
+                <a class="btn btn-primary" [routerLink]="['/book', books[0].id]">read</a>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="card bg-dark text-white  col" style="width: 10rem; margin: 1px; padding: 1px;flex: none">
+            <h4>No.2</h4>
+            <img [src]="books[1].picture" style="width: auto ;" class="card-img-top" alt="...">
+            <div class="card-body p-1 m-1">
+                <h5 class="card-title">{{books[1].name}}</h5>
+                <p style="display: inline;" class="card-text">rating: </p><span style="display: inline;" class="badge bg-primary rounded-pill">{{books[1].rating}}</span>
+            </div>
+            <ul class="list-group list-group-flush bg-dark text-white" style="border-color: darkgrey;">
+                <li class="list-group-item bg-dark text-white p-1 m-1">chapters: {{books[1].chapters}} </li>
+                <li class="list-group-item bg-dark text-white p-1 m-1">reders: {{books[1].follover}}</li>
+            </ul>
+            <div class="card-body p-1 m-1 position-relative text-center">
+                <a class="btn btn-primary" [routerLink]="['/book', books[1].id]">read</a>
+            </div>
+        </div>
+
+
+
+
+        <div class="card bg-dark text-white col" style="width: 10rem; margin: 1px; padding: 1px;flex: none">
+            <h4>No.3</h4>
+            <img [src]="books[2].picture" style="width: auto ;" class="card-img-top" alt="...">
+            <div class="card-body p-1 m-1">
+                <h5 class="card-title">{{books[2].name}}</h5>
+                <p style="display: inline;" class="card-text">rating: </p><span style="display: inline;" class="badge bg-primary rounded-pill">{{books[2].rating}}</span>
+
+            </div>
+            <ul class="list-group list-group-flush bg-dark text-white" style="border-color: darkgrey;">
+                <li class="list-group-item bg-dark text-white p-1 m-1">chapters: {{books[2].chapters}} </li>
+                <li class="list-group-item bg-dark text-white p-1 m-1">reders: {{books[2].follover}}</li>
+            </ul>
+            <div class="card-body p-1 m-1 position-relative text-center">
+                <a class="btn btn-primary" [routerLink]="['/book', books[2].id]">read</a>
+            </div>
+        </div>
+
+    </div>
+</div>

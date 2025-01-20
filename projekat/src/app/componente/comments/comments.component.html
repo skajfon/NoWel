@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container" style="padding-top: 5rem;">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col">
+            <button *ngIf="!wantToComm" class="btn btn-dark" (click)="commOn()"> coment</button>
+            <app-comm-form  (comented)="Comented($event)" *ngIf="wantToComm"></app-comm-form>
+
+        </div>
+        <div class="col-2"></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col">
+            <ul class="list-group list-group-dark">
+                <li class="list-group-item list-group-item-dark" *ngFor="let c of comm;">
+                    <div class="container">
+                        <div class="row border-top border-bottom border-dark">
+                            <div class="col-auto"><img style="width: 40px;"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png">
+                            </div>
+                            <div class="col">
+                                {{c.name}}
+                                <div>
+                                    rating:
+                                    <span *ngIf="c.rating>0" class="fa fa-star checked"></span>
+                                    <span *ngIf="c.rating>1" class="fa fa-star checked"></span>
+                                    <span *ngIf="c.rating>2" class="fa fa-star checked"></span>
+                                    <span *ngIf="c.rating>3" class="fa fa-star checked"></span>
+                                    <span *ngIf="c.rating>4" class="fa fa-star checked"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row border-bottom border-dark" style="min-height: 3rem;">
+                            <div class="col-1"></div>
+                            <div class="col">{{c.comm}}</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-2"> </div>
+    </div>
+</div>

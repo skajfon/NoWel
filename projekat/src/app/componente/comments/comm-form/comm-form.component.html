@@ -1,0 +1,52 @@
+<div class="container  bg-dark text-white " style="margin-bottom : 1%; padding: 1%;">
+    
+    <form [formGroup]="comentar" class="border border-white " (ngSubmit)="onSubmit()">
+        <div class="row-auto border-bottom border-white ">
+            <div class="col" style="margin: 1%;">
+                <label for="name" style="margin: 1%;">
+                    name
+                </label>
+                <input id="name" type="text" formControlName="Name">
+                <label for="rating" style="margin: 1%;">
+                    rating
+                </label>
+                <select id="rating" class="custom-select mb-3" formControlName="rating">
+                    <option *ngFor="let s of stars" [ngValue]="s">
+                        {{s}}
+                    </option>
+                </select>
+            </div>
+            <div class="row-auto" >
+                <div style="margin: 2%;" class="alert alert-danger" *ngIf="comentar.get('Name')?.invalid && (comentar.get('Name')?.dirty || comentar.get('Name')?.touched)">
+                     ime mora biti duze od 2 karaktera a krace od 30.
+                </div>
+            </div>
+            <div class="row-auto" >
+                <div style="margin: 2%;" class="alert alert-danger" *ngIf="comentar.get('rating')?.invalid && (comentar.get('rating')?.dirty || comentar.get('rating')?.touched)">
+                     morate oceniti knjigu
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" style="margin: 1%;">
+                <div class="row-auto">   
+                    <textarea class="form-control" placeholder="Leave a comment here"formControlName="comm" ></textarea>
+                </div>
+            </div>
+            <div class="row-auto" >
+                <div style="margin: 2%;" class="alert alert-danger" *ngIf="comentar.get('comm')?.invalid && (comentar.get('comm')?.dirty || comentar.get('comm')?.touched)">
+                     comentar mora sadrzati bar 10 karaktera.
+                </div>
+            </div>
+        </div>
+        <div class="row " style="justify-content: center; margin: 1%;"> 
+            <div class="col-1" style="text-align: center;"></div>
+            <div class="col" >
+                <button class="btn btn-secondary" type="submit" [disabled]="!comentar.valid">Submit</button>
+            </div>
+            <div class="col-1" style="text-align: center;"></div>
+            
+        </div>
+        
+    </form>
+</div>

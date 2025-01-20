@@ -1,0 +1,23 @@
+<div class="container bg-dark border border-light">
+    <div class="row border border-light">
+        <h5>
+            <a class="link-underline-dark link-light" [routerLink]="['/book', book.id]">
+                {{book.name }}
+            </a>
+        </h5>
+    </div>
+    <div class="row border border-light">
+        <div class="col-auto border border-light">
+            <a [routerLink]="['/book', book.id]">
+                <img class="" style="width: 10rem; margin: 2px; padding: 2px;" [src]="book.picture">
+            </a>
+        </div>
+        <div class="col" style="padding:0px">
+            <div class="text-light"> Number of chapters:{{book.chapters}}</div>
+            <div class="text-light">Number of reader:{{book.follover}}</div>
+            <div class="text-light border-top border-light">{{book.descr}}</div>
+        </div>
+    </div>
+
+
+</div>

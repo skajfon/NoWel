@@ -1,0 +1,18 @@
+<div class="container" style="padding:10px;border:1px solid gray;" *ngFor="let book of books; index as i">
+    <app-item [book]="book">
+    </app-item>
+</div>
+<div style="padding: 5px; margin: 10px;">
+    <div class="row " style="justify-content:center">
+        <div class="col-auto">
+            <button *ngIf="canGoBack" (click)="back()" type="button" class="btn btn-primary btn-lg">previos</button>
+        </div>
+        <div class="col-auto">
+            {{page+1}}
+        </div>
+        <div class="col-auto">
+            <button *ngIf="canGoNext" (click)="next()" type="button" class="btn btn-primary btn-lg">next</button>
+        </div>
+
+    </div>
+</div>

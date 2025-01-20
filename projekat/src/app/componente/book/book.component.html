@@ -1,0 +1,51 @@
+<div style="height: 2rem;"></div>
+<div class="container border rounded bg-dark text-light">
+    <div class="row " style=" width: 99%;">
+        <div class="col-auto" style="padding: 1%; margin: 1%;"><img [src]="book.picture"
+                style="margin: 5px;padding: 5px;" class="rounded img-auto" style="width: 15rem;"></div>
+        <div class="col border-start" style="margin: 5px;">
+            <div>
+                <h3>" {{book.name}} "</h3>
+            </div>
+            <div style="padding-left: 1rem;">readers:{{book.follover}}</div>
+
+            <div class="border-top">{{book.descr}} </div>
+        </div>
+    </div>
+</div>
+
+
+<div style="height: 2rem;">
+</div>
+
+
+<div class="container-fluid">
+    <div class="row" style="justify-content: center;">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <h3>List of chapters</h3>
+            <div class="list-group ">
+                <a [routerLink]="['/chapter',book.id , c.index]" *ngFor="let c of get10();"
+                    class="list-group-item list-group-item-action list-group-item-dark">
+                    <div class="d-inline p-2">{{c.index}}</div>
+                    <div class="fw-bold d-inline p-2">{{c.name}}</div>
+                </a>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+
+    <div class="row" style="justify-content: center; margin-top: 1rem;">
+        <div class="col-2"></div>
+        <div class="col">
+            <button *ngIf="canBack;" class="btn-dark btn"  (click)="prev()">prev</button>
+            <button *ngIf="canNext;" class="btn-dark btn"  (click)="next()" >next</button>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+<app-comments ></app-comments>
+
+
+
+<div style="height: 5rem;"></div>
